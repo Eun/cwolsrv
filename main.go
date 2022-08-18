@@ -34,13 +34,21 @@ var cliFlagConfig = cli.StringFlag{
 
 const maxGracefulCloseTimeout = time.Second * 15
 
+var (
+	version string
+	commit  string
+	date    string
+)
+
 func main() {
 	var logfile *os.File
 	zerolog.TimeFieldFormat = zerolog.TimeFormatUnix
 
 	app := cli.NewApp()
 	app.Name = "cwolsrv"
-	app.Usage = "usage here"
+	app.Version = version + " " + commit + " " + date
+	app.Description = "Run custom commands on wake on lan magic packets."
+	app.Author = "Tobias Salzmann"
 	app.Flags = []cli.Flag{
 		cliFlagLogFile,
 		cliFlagDebug,
