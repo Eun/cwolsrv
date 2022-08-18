@@ -20,7 +20,7 @@ func TestReadConfigFromReader(t *testing.T) {
 hosts:
   - name: test
     mac: 00-01-02-03-04-05
-    run: /bin/false
+    run: [/bin/false]
 `,
 			want:    nil,
 			wantErr: true,
@@ -33,7 +33,7 @@ binds:
 hosts:
   - name: test
     mac: 00-01-02-03-04-05
-    run: /bin/false
+    run: [/bin/false]
 `,
 			want:    nil,
 			wantErr: true,
@@ -46,7 +46,7 @@ binds:
 hosts:
   - name: test
     mac: 00-01-02-03-04-05
-    run: /bin/false
+    run: [/bin/false]
 `,
 			want:    nil,
 			wantErr: true,
@@ -59,7 +59,7 @@ binds:
 hosts:
   - name: test
     mac: 00-01-02-03-04-05
-    run: /bin/false
+    run: [/bin/false]
 `,
 			want:    nil,
 			wantErr: true,
@@ -72,7 +72,7 @@ binds:
 hosts:
   - name: test
     mac: 00-01-02-03-04-05
-    run: /bin/false
+    run: [/bin/false]
 `,
 			want:    nil,
 			wantErr: true,
@@ -94,7 +94,7 @@ binds:
 hosts:
   - name: test
     mac: ABCDEFGH
-    run: /bin/false
+    run: [/bin/false]
 `,
 			want:    nil,
 			wantErr: true,
@@ -120,12 +120,12 @@ binds:
 hosts:
   - name: joe
     mac: 00-01-02-03-04-05
-    run: /bin/false
+    run: [/bin/false]
   - name: alice
     mac: 01-01-02-03-04-05
-    run: /bin/false
+    run: [/bin/false]
   - name: wildcard
-    run: /bin/false
+    run: [/bin/false]
 `,
 			want: &Config{
 				Binds: []string{
