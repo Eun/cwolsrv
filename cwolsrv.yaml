@@ -1,0 +1,16 @@
+binds:
+  - :9     # listen on any interface on port 9
+  - :7     # listen on any interface on port 7
+
+# specify which hosts are known and what to do
+# when a matching magic packet arrives
+hosts:
+  # run /bin/true when a magic packet is sent to mac 01-02-03-04-05-06
+  - name: Joe's Computer   # choose name for the host (optional)
+    mac: 01:02:03:04:05:06 # the mac address to look out for
+    run:                   # run this command
+      - /bin/true
+  # run /bin/true for every magic packet that is arriving
+  - name: test
+    run:
+      - /bin/true
